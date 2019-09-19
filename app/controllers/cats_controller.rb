@@ -19,10 +19,10 @@ class CatsController < ApplicationController
         cat.destroy
     end
 
-    # def patch
-    #     @cat = Cat.find(params[:id]).update(cat_params)
-    #         render json: "Updated Successfully"
-    # end
+    def update
+        @cat = Cat.find(params[:id]).update(cat_params)
+        render json: "Updated Successfully"
+    end
 
     def cat_params
         params.require(:cat).permit(:name, :age, :enjoys, :img)
